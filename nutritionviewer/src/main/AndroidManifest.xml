@@ -1,0 +1,13 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.github.donmahallem.heartfit.module.nutritionviewer">
+
+    <application>
+        <activity android:name=".activity.NutritionHistoryActivity" android:exported="true">
+            <intent-filter>
+                <action android:name="vnd.google.fitness.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="vnd.google.fitness.data_type/com.google.nutrition" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>

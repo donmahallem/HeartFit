@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                   xmlns:tools="http://schemas.android.com/tools"
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="match_parent"
+                                                   android:maxHeight="800dp"
+                                                   android:maxWidth="600dp"
+                                                   android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_vertical_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="@dimen/layout_margin_horizontal"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_vertical_end"
+        android:layout_width="wrap_content"
+        android:orientation="vertical"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_end="@dimen/layout_margin_horizontal"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_horizontal_top"
+        android:layout_width="wrap_content"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_begin="@dimen/layout_margin_bottom"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_horizontal_bottom"
+        android:layout_width="wrap_content"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_end="@dimen/layout_margin_bottom"/>
+
+    <TextView
+        android:id="@+id/txtTitle"
+        style="@style/TextAppearance.MaterialComponents.Headline5"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:gravity="start|center_vertical"
+        app:layout_constraintStart_toEndOf="@id/guideline_vertical_start"
+        app:layout_constraintTop_toBottomOf="@id/guideline_horizontal_top"
+        app:layout_constraintEnd_toStartOf="@id/guideline_vertical_end"
+        tools:text="Title"/>
+
+    <TextView
+        android:id="@+id/txtResistanceTypeCaption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/resistance_type"
+        app:layout_constraintStart_toEndOf="@id/guideline_vertical_start"
+        app:layout_constraintTop_toBottomOf="@id/txtTitle"/>
+
+    <TextView
+        android:id="@+id/txtResistanceTypeValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/txtResistanceTypeCaption"
+        app:layout_constraintEnd_toEndOf="@id/guideline_vertical_end"
+        app:layout_constraintTop_toTopOf="@id/txtResistanceTypeCaption"
+        tools:text="Cable"/>
+
+    <TextView
+        android:id="@+id/txtRepetitionCaption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/repetitions"
+        app:layout_constraintStart_toEndOf="@id/guideline_vertical_start"
+        app:layout_constraintTop_toBottomOf="@id/txtResistanceTypeCaption"/>
+
+    <TextView
+        android:id="@+id/txtRepetitionValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/txtRepetitionCaption"
+        app:layout_constraintEnd_toEndOf="@id/guideline_vertical_end"
+        app:layout_constraintTop_toTopOf="@id/txtRepetitionCaption"
+        tools:text="10x"/>
+
+    <TextView
+        android:id="@+id/txtResistanceCaption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/resistance"
+        app:layout_constraintStart_toEndOf="@id/guideline_vertical_start"
+        app:layout_constraintTop_toBottomOf="@id/txtRepetitionCaption"/>
+
+    <TextView
+        android:id="@+id/txtResistanceValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/txtResistanceCaption"
+        app:layout_constraintEnd_toEndOf="@id/guideline_vertical_end"
+        app:layout_constraintTop_toTopOf="@id/txtResistanceCaption"
+        tools:text="20 kg"/>
+
+    <TextView
+        android:id="@+id/txtDurationCaption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/duration"
+        app:layout_constraintStart_toEndOf="@id/guideline_vertical_start"
+        app:layout_constraintTop_toBottomOf="@id/txtResistanceCaption"/>
+
+    <TextView
+        android:id="@+id/txtDurationValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/txtDurationCaption"
+        app:layout_constraintEnd_toEndOf="@id/guideline_vertical_end"
+        app:layout_constraintTop_toTopOf="@id/txtDurationCaption"
+        tools:text="10s"/>
+
+    <TextView
+        android:id="@+id/txtHeartRateCaption"
+        style="@style/TextAppearance.MaterialComponents.Caption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/heartrate"
+        app:layout_constraintStart_toEndOf="@id/guideline_vertical_start"
+        app:layout_constraintTop_toBottomOf="@id/txtDurationCaption"/>
+
+    <com.github.mikephil.charting.charts.LineChart
+        android:layout_width="0dp"
+        android:id="@+id/lineChart"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/guideline_horizontal_bottom"
+        app:layout_constraintEnd_toEndOf="@id/guideline_vertical_end"
+        app:layout_constraintHeight_min="100dp"
+        app:layout_constraintStart_toEndOf="@id/guideline_vertical_start"
+        app:layout_constraintTop_toBottomOf="@id/txtHeartRateCaption"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

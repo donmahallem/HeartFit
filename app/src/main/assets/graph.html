@@ -1,0 +1,114 @@
+<html>
+  <head>
+    <!--Load the AJAX API-->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+
+      // Load the Visualization API and the corechart package.
+      google.charts.load('current', {'packages':['corechart']});
+
+      // Set a callback to run when the Google Visualization API is loaded.
+      google.charts.setOnLoadCallback(drawChart);
+
+      // Callback that creates and populates a data table,
+      // instantiates the pie chart, passes in the data and
+      // draws it.
+	  var data;
+	  var chart;
+	  var options;
+      function drawChart() {
+		data = new google.visualization.DataTable();
+		data.addColumn('date', 'Name');
+		data.addColumn('number', 'Weight');
+		data.addColumn('number', 'Body Fat Percentage');
+		data.addRows([
+          [new Date(2004),  1000,      0.10],
+          [new Date(2006),  1170.5,      0.20],
+          [new Date(2007), null,       0.30],
+          [new Date(2007), 1235,       null],
+          [new Date(2008),  1030,      0.10]
+		]);
+
+		options = {
+    interpolateNulls: true,
+		  chartArea: {
+			height: '56%'
+		  },
+          curveType: 'function',
+		  series: {
+			0: {
+			  targetAxisIndex: 0
+			},
+			1: {
+			  targetAxisIndex: 1
+			}
+		  },
+		  hAxis: {
+			title: 'Name'
+		  },
+		  vAxes: {
+			0: {
+			  title: 'Weight',
+			  minValue:0
+			},
+			1: {
+			  title: '% Percent',
+			  format:'percent',
+			  maxValue:1,
+			  minValue:0
+			}
+		  },
+		  theme: 'material',
+		  legend: { 
+			position : 'bottom'
+		  }
+		};
+
+      chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+
+      chart.draw(data, options);
+      }
+	  
+	  function updateData(x){
+		data = new google.visualization.DataTable();
+		data.addColumn('date', 'Name');
+		data.addColumn('number', 'Weight');
+		data.addColumn('number', 'Body Fat Percentage');
+		for(let row of x){
+			data.addRow([new Date(row[0]*1000),row[1],row[2]]);
+		}
+		chart.draw(data, options);
+	  }
+	  
+	  function updateData2(x){
+	  return ""+x;
+	  }
+    </script>
+	<style type="text/css">
+		body,#chart_div{
+			width:100%;
+			height:100%;
+			margin:0px;
+			padding:0px;
+		}
+		body{
+			overscroll:none;
+		}
+		html {
+			overflow: hidden;
+			height: 100%;
+		}
+
+		body {
+			height: 100%;
+			overflow: hidden;
+		}
+	</style>
+  </head>
+
+  <body>
+    <!--Div that will hold the pie chart-->
+    <div id="chart_div"></div>
+    <script type="text/javascript" src="graph.js"></script>
+  </body>
+</html>

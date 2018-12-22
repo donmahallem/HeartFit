@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/layout_margin_horizontal"
+        android:paddingTop="8dp"
+        android:paddingEnd="@dimen/layout_margin_horizontal"
+        android:paddingBottom="8dp"
+        tools:context=".MainActivity">
+
+        <TextView
+            android:id="@+id/txtDescription"
+            style="@style/TextAppearance.MaterialComponents.Body1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/description_insert_workout_exercise"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toStartOf="@id/spinnerWeightUnit"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtDescription">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editResistance"
+                style="@style/Widget.MaterialComponents.TextInputEditText.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/resistance"
+                android:inputType="numberDecimal"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Spinner
+            android:id="@+id/spinnerWeightUnit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@id/textInputLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/textInputLayout"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout2"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textInputLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editRepititions"
+                style="@style/Widget.MaterialComponents.TextInputEditText.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/repetitions"
+                android:inputType="number"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <TextView
+            android:id="@+id/txtCaptionSpinnerWorkoutExercise"
+            style="@style/TextAppearance.MaterialComponents.Caption"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/workout_exercise"
+            app:layout_constraintEnd_toEndOf="@id/btnSelectWorkoutExercise"
+            app:layout_constraintStart_toStartOf="@id/btnSelectWorkoutExercise"
+            app:layout_constraintTop_toBottomOf="@id/textInputLayout2"
+            tools:layout_editor_absoluteY="209dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSelectWorkoutExercise"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:textAlignment="textStart"
+            tools:text="test workout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtCaptionSpinnerWorkoutExercise"/>
+
+        <TextView
+            android:id="@+id/txtCaptionSpinnerResistanceType"
+            style="@style/TextAppearance.MaterialComponents.Caption"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/resistance_type"
+            app:layout_constraintEnd_toEndOf="@id/btnSelectResistanceType"
+            app:layout_constraintStart_toStartOf="@id/btnSelectResistanceType"
+            app:layout_constraintTop_toBottomOf="@id/btnSelectWorkoutExercise"
+            tools:layout_editor_absoluteY="209dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSelectResistanceType"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:textAlignment="textStart"
+            tools:text="test workout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtCaptionSpinnerResistanceType"/>
+
+        <TextView
+            android:id="@+id/txtCaptionDateAndTime"
+            style="@style/TextAppearance.MaterialComponents.Caption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/date_and_time"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnSelectResistanceType"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSelectStartDate"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="start|center_vertical"
+            android:text="Select Date"
+            app:layout_constraintEnd_toStartOf="@id/btnSelectStartTime"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtCaptionDateAndTime"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSelectStartTime"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select Time"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtCaptionDateAndTime"/>
+
+        <Switch
+            android:id="@+id/switchTimeWorkout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="@string/time_workout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnSelectStartTime"/>
+
+        <TextView
+            android:id="@+id/txtCaptionEndDateTime"
+            style="@style/TextAppearance.MaterialComponents.Caption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/end_time"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/switchTimeWorkout"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSelectEndDate"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="start|center_vertical"
+            android:text="Select Date"
+            app:layout_constraintEnd_toStartOf="@id/btnSelectEndTime"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtCaptionEndDateTime"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSelectEndTime"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select Time"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtCaptionEndDateTime"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnTimeExercise"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/time_exercise"
+            app:icon="@drawable/ic_timer_black_24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnSelectEndDate"/>
+
+        <TextView
+            android:id="@+id/txtCaptionDuration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/duration_in_seconds"
+            app:layout_constraintTop_toBottomOf="@id/switchTimeWorkout"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout3"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtCaptionDuration">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editDuration"
+                style="@style/Widget.MaterialComponents.TextInputEditText.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/duration"
+                android:inputType="number"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/groupDuration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:constraint_referenced_ids="textInputLayout3,txtCaptionDuration"/>
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/groupTimer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            app:constraint_referenced_ids="btnTimeExercise,btnSelectEndDate,btnSelectEndTime,txtCaptionEndDateTime"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

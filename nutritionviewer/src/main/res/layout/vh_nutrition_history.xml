@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minHeight="48dp"
+    android:paddingStart="@dimen/horizontal_list_margin"
+    android:paddingEnd="@dimen/horizontal_list_margin"
+    android:background="?selectableItemBackground">
+
+    <TextView
+        android:id="@+id/txtDate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/txtCaloriesConsumed"
+        app:layout_constraintStart_toStartOf="parent"
+        android:gravity="start|center_vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@tools:sample/date/ddmmyy"/>
+
+    <TextView
+        android:id="@+id/txtCaloriesConsumed"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/txtCaloriesExpanded"
+        app:layout_constraintStart_toEndOf="@id/txtDate"
+        app:layout_constraintTop_toTopOf="parent"
+        android:gravity="center"
+        tools:text="@tools:sample/date/ddmmyy"/>
+
+    <TextView
+        android:id="@+id/txtCaloriesExpanded"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:gravity="end|center_vertical"
+        app:layout_constraintStart_toEndOf="@id/txtCaloriesConsumed"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@tools:sample/date/ddmmyy"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

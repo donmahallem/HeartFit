@@ -1,0 +1,17 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.github.donmahallem.sessionviewer">
+    <application>
+
+        <activity
+            android:theme="@style/AppTheme"
+            android:name=".activity.SessionWorkoutExerciseActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="vnd.google.fitness.VIEW"/>
+
+                <data android:mimeType="vnd.google.fitness.session/strength_training"/>
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

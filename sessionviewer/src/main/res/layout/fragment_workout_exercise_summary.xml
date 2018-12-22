@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/layout_margin_horizontal"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/layout_margin_horizontal"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_horizontal_top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="@dimen/layout_margin_top"/>
+
+        <TextView
+            android:id="@+id/txtTitle"
+            style="@style/TextAppearance.MaterialComponents.Headline4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="@id/guideline_vertical_end"
+            app:layout_constraintStart_toStartOf="@id/guideline_vertical_start"
+            app:layout_constraintTop_toBottomOf="@id/guideline_horizontal_top"
+            tools:text="Session Name"/>
+
+        <TextView
+            android:id="@+id/txtTitleCaption"
+            style="@style/TextAppearance.MaterialComponents.Caption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/guideline_vertical_start"
+            app:layout_constraintTop_toBottomOf="@id/txtTitle"
+            tools:text="Strength"/>
+
+        <TextView
+            android:id="@+id/txtCaloriesExpendedCaption"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/calories_expended"
+            app:layout_constraintEnd_toStartOf="@id/txtCaloriesExpendedValue"
+            app:layout_constraintStart_toStartOf="@id/guideline_vertical_start"
+            app:layout_constraintTop_toBottomOf="@id/txtTitleCaption"/>
+
+        <TextView
+            android:id="@+id/txtCaloriesExpendedValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="@id/guideline_vertical_end"
+            app:layout_constraintTop_toTopOf="@id/txtCaloriesExpendedCaption"
+            tools:text="200kcal"/>
+
+        <View
+            android:id="@+id/divider1"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="#88000000"
+            app:layout_constraintEnd_toEndOf="@id/guideline_vertical_end"
+            app:layout_constraintStart_toStartOf="@id/guideline_vertical_start"
+            app:layout_constraintTop_toBottomOf="@id/txtCaloriesExpendedValue"
+            />
+
+        <TextView
+            android:id="@+id/txtHeartRateSectionHeader"
+            style="@style/TextAppearance.MaterialComponents.Headline6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/heartrate"
+            app:layout_constraintStart_toStartOf="@id/guideline_vertical_start"
+            app:layout_constraintTop_toBottomOf="@id/divider1"/>
+
+        <TextView
+            android:id="@+id/txtHeartRateMinCaption"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/minimum"
+            app:layout_constraintEnd_toStartOf="@id/txtHeartRateMinValue"
+            app:layout_constraintStart_toStartOf="@id/guideline_vertical_start"
+            app:layout_constraintTop_toBottomOf="@id/txtHeartRateSectionHeader"/>
+
+        <TextView
+            android:id="@+id/txtHeartRateMinValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="@id/guideline_vertical_end"
+            app:layout_constraintTop_toTopOf="@id/txtHeartRateMinCaption"
+            tools:text="200kcal"/>
+
+        <TextView
+            android:id="@+id/txtHeartRateMaxCaption"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/maximum"
+            app:layout_constraintEnd_toStartOf="@id/txtHeartRateAvgValue"
+            app:layout_constraintStart_toStartOf="@id/guideline_vertical_start"
+            app:layout_constraintTop_toBottomOf="@id/txtHeartRateMinCaption"/>
+
+        <TextView
+            android:id="@+id/txtHeartRateMaxValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="@id/guideline_vertical_end"
+            app:layout_constraintTop_toTopOf="@id/txtHeartRateMaxCaption"
+            tools:text="200kcal"/>
+
+        <TextView
+            android:id="@+id/txtHeartRateAvgCaption"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/average"
+            app:layout_constraintEnd_toStartOf="@id/txtHeartRateAvgValue"
+            app:layout_constraintStart_toStartOf="@id/guideline_vertical_start"
+            app:layout_constraintTop_toBottomOf="@id/txtHeartRateMaxCaption"/>
+
+        <TextView
+            android:id="@+id/txtHeartRateAvgValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="@id/guideline_vertical_end"
+            app:layout_constraintTop_toTopOf="@id/txtHeartRateAvgCaption"
+            tools:text="200kcal"/>
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/group_heart_rate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:constraint_referenced_ids="txtHeartRateAvgValue,txtHeartRateAvgCaption,txtHeartRateMinValue,txtHeartRateMinCaption,txtHeartRateMaxCaption,txtHeartRateMaxValue"/>
+
+        <View
+            android:id="@+id/divider2"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="#88000000"
+            app:layout_constraintEnd_toEndOf="@id/guideline_vertical_end"
+            app:layout_constraintStart_toStartOf="@id/guideline_vertical_start"
+            app:layout_constraintTop_toBottomOf="@id/txtHeartRateAvgCaption"/>
+        <TextView
+            android:id="@+id/txtStepCountCaption"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/step_count"
+            app:layout_constraintEnd_toStartOf="@id/txtHeartRateAvgValue"
+            app:layout_constraintStart_toStartOf="@id/guideline_vertical_start"
+            app:layout_constraintTop_toBottomOf="@id/divider2"/>
+
+        <TextView
+            android:id="@+id/txtStepCountValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="@id/guideline_vertical_end"
+            app:layout_constraintTop_toTopOf="@id/txtStepCountCaption"
+            tools:text="200kcal"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

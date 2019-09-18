@@ -34,7 +34,7 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     api 'androidx.recyclerview:recyclerview:1.0.0'
     api 'com.google.android.material:material:1.0.0'
-    api 'com.google.android.gms:play-services-fitness:16.0.1'
+    api 'com.google.android.gms:play-services-fitness:18.0.0'
     api 'com.google.android.gms:play-services-auth:17.0.0'
     api 'com.jakewharton.timber:timber:4.7.1'
     api 'com.jakewharton.threetenabp:threetenabp:1.2.1'

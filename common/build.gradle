@@ -35,7 +35,7 @@ dependencies {
     api 'androidx.recyclerview:recyclerview:1.1.0'
     api 'com.google.android.material:material:1.1.0'
     api 'com.google.android.gms:play-services-fitness:18.0.0'
-    api 'com.google.android.gms:play-services-auth:17.0.0'
+    api 'com.google.android.gms:play-services-auth:18.0.0'
     api 'com.jakewharton.timber:timber:4.7.1'
     api 'com.jakewharton.threetenabp:threetenabp:1.2.4'
     api 'com.google.firebase:firebase-core:17.4.4'

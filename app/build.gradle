@@ -50,7 +50,7 @@ dependencies {
     // implementation "androidx.room:room-guava:$room_version"
     // Test helpers
     testImplementation "androidx.room:room-testing:$room_version"
-    def paging_version = "3.0.1"
+    def paging_version = "3.1.0"
     implementation "androidx.paging:paging-runtime:$paging_version"
     // use -ktx for Kotlin
     // alternatively - without Android dependencies for testing
